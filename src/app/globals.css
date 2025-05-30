@@ -1,0 +1,104 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* CSS Custom Properties for consistent theming */
+:root {
+  --background: #1a1a1a;
+  --foreground: #ffffff;
+  --color-primary: #55b291;
+  --color-secondary: #29916c;
+  --color-accent: #b7e3cf;
+  --color-muted: rgba(255, 255, 255, 0.7);
+  --color-border: rgba(255, 255, 255, 0.1);
+  --color-card-bg: rgba(255, 255, 255, 0.02);
+  --color-card-hover: rgba(255, 255, 255, 0.05);
+}
+
+/* Base styles */
+body {
+  @apply bg-[var(--background)] text-[var(--foreground)] font-sans min-h-screen antialiased;
+}
+
+/* Utility classes for consistent styling */
+@layer utilities {
+  .gradient-text {
+    @apply bg-gradient-to-r from-[var(--color-secondary)] to-[var(--color-primary)] bg-clip-text text-transparent;
+  }
+  
+  .card-base {
+    @apply backdrop-blur-xl bg-[var(--color-card-bg)] border border-[var(--color-border)] rounded-xl shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)];
+  }
+  
+  .card-hover {
+    @apply hover:bg-[var(--color-card-hover)] transition-all duration-300 hover:scale-101 cursor-pointer;
+  }
+  
+  .text-primary {
+    @apply text-[var(--color-primary)];
+  }
+  
+  .text-muted {
+    @apply text-[var(--color-muted)];
+  }
+  
+  .hover-primary {
+    @apply hover:text-[var(--color-primary)] transition-colors duration-200;
+  }
+}
+
+/* Component-specific styles */
+@layer components {
+  .prose-custom {
+    @apply max-w-none text-white/70;
+  }
+  
+  .prose-custom h1 {
+    @apply text-4xl font-bold mb-6 text-white/90;
+  }
+  
+  .prose-custom h2 {
+    @apply text-2xl font-bold mb-4 text-white/90 mt-8;
+  }
+  
+  .prose-custom h3 {
+    @apply text-xl font-semibold mb-3 text-white/90 mt-6;
+  }
+  
+  .prose-custom p {
+    @apply text-white/70 text-lg leading-relaxed mb-4;
+  }
+  
+  .prose-custom ul {
+    @apply list-disc pl-6 space-y-2 text-white/70 mb-4;
+  }
+  
+  .prose-custom ol {
+    @apply list-decimal pl-6 space-y-2 text-white/70 mb-4;
+  }
+  
+  .prose-custom li {
+    @apply text-white/70;
+  }
+  
+  .prose-custom strong {
+    @apply font-semibold text-white/90;
+  }
+  
+  .prose-custom code {
+    @apply bg-[#0d1117] border border-white/[0.1] rounded px-2 py-1 text-sm text-white/80;
+  }
+  
+  .prose-custom pre {
+    @apply bg-[#0d1117] border border-white/[0.1] rounded-lg p-6 overflow-x-auto mb-6;
+  }
+  
+  .prose-custom pre code {
+    @apply bg-transparent border-0 p-0 text-white/80;
+  }
+  
+  .prose-custom blockquote {
+    @apply border-l-4 border-[var(--color-primary)] pl-4 italic text-white/60 mb-4;
+  }
+}
