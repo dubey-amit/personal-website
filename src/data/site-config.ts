@@ -5,10 +5,10 @@ export const siteConfig = {
   url: "https://amitdubey.dev",
   author: {
     name: "Amit Dubey",
-    twitter: "@amitdubey",
-    linkedin: "amitdubey",
-    github: "amitdubey",
-    instagram: "amitdubeysec",
+    twitter: "@AmitMDubey",
+    linkedin: "amitmdubey",
+    github: "dubey-amit",
+    instagram: "im.amit.dubey",
   },
   nav: [
     { name: "Home", href: "/" },
