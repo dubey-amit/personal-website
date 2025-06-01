@@ -19,7 +19,6 @@ export interface Project {
   title: string;
   tag: string;
   desc: string;
-  image: string;
   link?: string;
   tags?: string[];
 }
